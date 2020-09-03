@@ -1,19 +1,20 @@
 require('dotenv').config();
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
+const apiKey = process.env.YOUR_API_KEY;
+const username = process.env.YOUR_USERNAME;
 
 const sendSms = (phone, message) => {
-  const client = require('twilio')(accountSid, authToken);
-  client.messages
+  const AfricasTalking = require('africastalking')(apikey, username);
+  const sms = africastalking.SMS
     .create({
        body: message,
-       from: process.env.TWILIO_PHONE_NUMBER,
+       from: process.env.PHONE_NUMBER,
        to: phone
      })
-    .then(message => console.log(message.sid)).catch(err=>{
+    .then(response => console.log(response)).catch(err=>{
         console.log(err);
     });
 }
 
 module.exports = sendSms;
+
