@@ -1,20 +1,25 @@
-require('dotenv').config();
+require("dotenv").config();
 
 const apiKey = process.env.YOUR_API_KEY;
 const username = process.env.YOUR_USERNAME;
 
+
 const sendSms = (phone, message) => {
-  const AfricasTalking = require('africastalking')(apikey, username);
-  const sms = africastalking.SMS
-    .create({
-       body: message,
-       from: process.env.PHONE_NUMBER,
-       to: phone
-     })
-    .then(response => console.log(response)).catch(err=>{
-        console.log(err);
+  const AfricasTalking = require("africastalking")({apiKey,username});
+  const sms = AfricasTalking.SMS;
+  const options = {
+    to: [phone],
+    message: message,
+  };
+
+  sms
+    .send(options)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
     });
-}
+};
 
 module.exports = sendSms;
-
