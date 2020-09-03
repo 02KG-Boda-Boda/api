@@ -85,11 +85,11 @@ export default (app) => {
     app.get('/api/V1/expenses', CheckAuth, Expenses.listExpense);
     app.put('/api/V1/expenses/:expense_id', CheckAuth, Expenses.updateLoan);
     app.delete('/api/V1/expenses/:expense_id', CheckAuth, Expenses.deleteExpense);
-    app.get('/api/V1/employees_count', CheckAuth, Statistics.employees_count);
-    app.get('/api/V1/savings_count', CheckAuth, Statistics.savings_count);
-    app.get('/api/V1/members_count', CheckAuth, Statistics.members_count);
-    app.get('/api/V1/loans_count', CheckAuth, Statistics.loans_count);
-    app.get('/api/V1/savings_trend', CheckAuth, Statistics.savings_trend);
+    app.get('/api/V1/employees_count',  Statistics.employees_count);
+    app.get('/api/V1/savings_count',  Statistics.savings_count);
+    app.get('/api/V1/members_count',  Statistics.members_count);
+    app.get('/api/V1/loans_count', Statistics.loans_count);
+    app.get('/api/V1/savings_trend', Statistics.savings_trend);
     app.post('/api/V1/transactions',Transactions.createTransaction);
     app.get('/api/V1/transactions',Transactions.listTransactions);
 
