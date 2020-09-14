@@ -18,7 +18,7 @@ class Users {
             phoneNumber,
             nin,
             role
-        } = req.body
+        } = req.body //sometimes the .body is the issue to look into
         const photo = req.files.photo[0].path;
         bcrypt.hash(password, 10, (err, hash) => {
             if (err) {
@@ -62,10 +62,10 @@ class Users {
         } = req.body
         console.log(req.body)
         User.findOne({
-            where: {
-                email: email
-            }
-        })
+                where: {
+                    email: email
+                }
+            })
             .then(user => {
                 if (!user) {
                     return res.status(401).json({
@@ -115,7 +115,9 @@ class Users {
     }
 
     static deleteUser(req, res) {
-        const { userData } = req.body
+        const {
+            userData
+        } = req;
         if (userData.role == "administrator") {
             return User.findByPk(req.params.user_id)
                 .then(user => {
@@ -124,7 +126,8 @@ class Users {
                             message: 'User Not Found',
                         });
                     }
-                    return fs.unlink(`${user.photo}`, function (err) {
+                    return fs.unlink(`${user.photo}`, function(err) {
+
                         if (err && err.code == 'ENOENT') {
                             // file doens't exist
                             console.info("Photo doesn't exist, won't remove it.");
@@ -174,7 +177,7 @@ class Users {
             .then(user => {
                 if (photo != '') {
                     console.log(user.photo)
-                    fs.unlink(user.photo, function (err) {
+                    fs.unlink(user.photo, function(err) {
                         if (err && err.code == 'ENOENT') {
                             // file doens't exist
                             console.log(err)
