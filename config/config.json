@@ -1,23 +1,23 @@
 {
     "development": {
         "username": "root",
-        "password": "",
+        "password": "mAma,123",
         "database": "bodaboda",
-        "host": "localhost",
+        "host": "167.71.203.63",
         "dialect": "mysql"
     },
     "test": {
         "username": "root",
-        "password": "",
+        "password": "mAma,123",
         "database": "bodaboda",
-        "host": "127.0.0.1",
+        "host": "167.71.203.63",
         "dialect": "mysql"
     },
     "production": {
         "username": "root",
         "password": "mAma,123",
         "database": "bodaboda",
-        "host": "127.0.0.1",
+        "host": "167.71.203.63",
         "dialect": "mysql"
     }
 }
