@@ -15,12 +15,12 @@ class Expenses {
         } = req.body;
 
         Expense.create({
-            title,
-            amount,
-            note
-        }).then(expense => res.status(200).json({
-            expense: expense
-        }))
+                title,
+                amount,
+                note
+            }).then(expense => res.status(200).json({
+                expense: expense
+            }))
             .catch(error => res.status(400).json({
                 error: error
             }))
@@ -30,10 +30,12 @@ class Expenses {
         Expense.findAll()
             .then(expenses => {
                 res.status(200).json({
-                    expenses: expenses
+                    expenses: expenses,
+                    message: 'found them',
                 })
             }).catch(error => res.status(400).json({
-                error: error
+                error: error,
+                message: 'couldnt find',
             }))
     }
 
@@ -73,7 +75,9 @@ class Expenses {
     }
 
     static deleteExpense(req, res) {
-        const { userData } = req;
+        const {
+            userData
+        } = req;
         if (userData.role == "administrator") {
             return Expense.findByPk(req.params.expense_id)
                 .then(expense => {
