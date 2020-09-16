@@ -1,23 +1,23 @@
 {
-  "development": {
-    "username": "root",
-    "password": "mAma,123",
-    "database": "bodaboda",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": "mAma,123",
-    "database": "bodaboda",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-     "username": "root",
-    "password": "mAma,123",
-    "database": "bodaboda",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
+    "development": {
+        "username": "root",
+        "password": "mAma,123",
+        "database": "bodaboda",
+        "host": "167.71.203.63",
+        "dialect": "mysql"
+    },
+    "test": {
+        "username": "root",
+        "password": "mAma,123",
+        "database": "bodaboda",
+        "host": "167.71.203.63",
+        "dialect": "mysql"
+    },
+    "production": {
+        "username": "root",
+        "password": "mAma,123",
+        "database": "bodaboda",
+        "host": "167.71.203.63",
+        "dialect": "mysql"
+    }
 }
