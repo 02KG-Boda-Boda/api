@@ -98,6 +98,38 @@ class Statistics {
     }
 
 
+    
+    static total_investments(req,res) {
+        return sequelize.query("SELECT COUNT(Savings.id) AS 'total_investments' FROM Savings WHERE Savings.account_type = 'investments'",{
+            type: sequelize.QueryTypes.SELECT
+        }).then(data => {
+            res.status(200).json(data)
+        }).catch(error=>{
+            res.status(400).json(error)
+        })
+    }
+
+    static total_fixed(req,res) {
+        return sequelize.query("SELECT COUNT(Savings.id) AS 'total_fixed' FROM Savings WHERE Savings.account_type = 'fixed'",{
+            type: sequelize.QueryTypes.SELECT
+        }).then(data => {
+            res.status(200).json(data)
+        }).catch(error=>{
+            res.status(400).json(error)
+        })
+    }
+
+    static total_ordinary(req,res) {
+        return sequelize.query("SELECT COUNT(Savings.id) AS 'total_ordinary' FROM Savings WHERE Savings.account_type = 'ordinary'",{
+            type: sequelize.QueryTypes.SELECT
+        }).then(data => {
+            res.status(200).json(data)
+        }).catch(error=>{
+            res.status(400).json(error)
+        })
+    }
+
+
 
 
 

@@ -92,5 +92,8 @@ export default (app) => {
     app.get('/api/V1/savings_trend', Statistics.savings_trend);
     app.post('/api/V1/transactions',Transactions.createTransaction);
     app.get('/api/V1/transactions',Transactions.listTransactions);
+    app.get('/api/V1/total_investment',Statistics.total_investments);
+    app.get('/api/V1/total_fixed',Statistics.total_fixed);
+    app.get('/api/V1/total_ordinary',Statistics.total_ordinary);
 
 }

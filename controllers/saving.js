@@ -203,7 +203,7 @@ class Savings {
         .then((saving) => {
           if (!saving) {
             return res.status(404).send({
-              message: "Loan Not Found",
+              message: "Saving Not Found",
             });
           } else {
             saving

@@ -9,6 +9,7 @@ const sendSms = (phone, message) => {
   const sms = AfricasTalking.SMS;
   const options = {
     to: [phone],
+    from:"2GO",
     message: message,
   };
 
